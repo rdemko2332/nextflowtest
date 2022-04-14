@@ -27,7 +27,7 @@ process usingscript {
    output:
    file 'output.txt' into results_ch
    """
-   perl $baseDir/countlines.pl --file file >> output.txt
+   perl $params.countlinesPath --file file >> output.txt
    """
 }
 
