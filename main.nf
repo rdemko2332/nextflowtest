@@ -37,6 +37,6 @@ process returnResults {
     input:
     file 'output.txt' from results
     """
-    cat output.txt > $baseDir/exampledata/results.txt
+    cat output.txt > $params.outputDir/results.txt
     """
 }
