@@ -27,7 +27,7 @@ process usingscript {
    output:
    file 'output.txt' into results_ch
    """
-   perl $baseDir/test.pl --file file >> output.txt
+   perl $baseDir/countlines.pl --file file >> output.txt
    """
 }
 
