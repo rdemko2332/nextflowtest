@@ -2,18 +2,6 @@
 
 seq_ch = Channel.fromPath(params.inputFilePath).splitFasta( by:1, file:true  )
 
-process splitfile {
-    input:
-    file 'seq' from seq_ch
-
-    output:
-    file 'file' into output_ch
-
-    """
-    cat seq > file
-    """
-}
-
 process printProcesses {
   echo true
 
@@ -23,7 +11,7 @@ process printProcesses {
 
 process usingscript {
    input:
-   file 'file' from output_ch
+   file 'file' from seq_ch
    output:
    file 'output.txt' into results_ch
    """
